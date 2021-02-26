@@ -43,22 +43,13 @@ T doublyList<T>::get(int position)
         count++;
     }
 
-    return 0;
+    return -1;
 };
 
 template <typename T>
 bool doublyList<T>::empty()
 {
-    node<T> *cur = head;
-
-    int count = 0;
-    while (cur != nullptr)
-    {
-        count++;
-        cur = cur->next;
-    }
-
-    return count ? false : true;
+    return head ? false : true;
 };
 
 template <typename T>
