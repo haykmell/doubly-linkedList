@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 template <typename T>
 struct node
@@ -239,7 +238,7 @@ void doublyList<T>::display()
 
     while (cur != NULL)
     {
-        cout << cur->data << endl;
+        std::cout << cur->data << std::endl;
         cur = cur->next;
     }
 };
