@@ -12,8 +12,8 @@ template <typename T>
 class doublyList
 {
 private:
-    node<T> *head = NULL;
-    node<T> *tail = NULL;
+    node<T> *head = nullptr;
+    node<T> *tail = nullptr;
 
 public:
     void pushBack(T value);
@@ -33,7 +33,7 @@ T doublyList<T>::get(int position)
     node<T> *pre = head;
 
     int count = 0;
-    while (cur != NULL && count != position + 1)
+    while (cur != nullptr && count != position + 1)
     {
         pre = cur;
         if (count == position)
@@ -52,7 +52,7 @@ bool doublyList<T>::empty()
     node<T> *cur = head;
 
     int count = 0;
-    while (cur != NULL)
+    while (cur != nullptr)
     {
         count++;
         cur = cur->next;
@@ -67,7 +67,7 @@ int doublyList<T>::size()
     node<T> *cur = head;
 
     int count = 0;
-    while (cur != NULL)
+    while (cur != nullptr)
     {
         count++;
         cur = cur->next;
@@ -83,7 +83,7 @@ void doublyList<T>::remove(T value)
     node<T> *current = head;
     node<T> *prevprev = head;
 
-    while (current != NULL)
+    while (current != nullptr)
     {
         prevprev = previos;
         previos = current;
@@ -91,17 +91,17 @@ void doublyList<T>::remove(T value)
 
         if (previos->data == value)
         {
-            if (current == NULL)
+            if (current == nullptr)
             {
                 tail = prevprev;
-                prevprev->next = NULL;
+                prevprev->next = nullptr;
             }
             else
             {
                 if (head == previos)
                 {
                     head = current;
-                    current->prev = NULL;
+                    current->prev = nullptr;
                 }
                 else
                 {
@@ -121,9 +121,9 @@ void doublyList<T>::insert(T value, int position)
 
     if (position == 0)
     {
-        if (head == NULL)
+        if (head == nullptr)
         {
-            temp->next = NULL;
+            temp->next = nullptr;
             tail = temp;
             head = temp;
         }
@@ -135,14 +135,14 @@ void doublyList<T>::insert(T value, int position)
             temp->next = head;
             head = temp;
         }
-        temp->prev = NULL;
+        temp->prev = nullptr;
     }
     else
     {
         node<T> *cur = head;
         node<T> *pre = head;
         int count = 0;
-        while (cur != NULL)
+        while (cur != nullptr)
         {
             pre = cur;
             cur = cur->next;
@@ -152,7 +152,7 @@ void doublyList<T>::insert(T value, int position)
         cur = head;
         pre = head;
         int i = 0;
-        while (cur != NULL && i != position)
+        while (cur != nullptr && i != position)
         {
             pre = cur;
             cur = cur->next;
@@ -170,13 +170,13 @@ void doublyList<T>::insert(T value, int position)
             cur = head;
             pre = head;
 
-            while (cur != NULL)
+            while (cur != nullptr)
             {
                 pre = cur;
                 cur = cur->next;
             }
 
-            temp->next = NULL;
+            temp->next = nullptr;
             pre->next = temp;
             tail = temp;
         }
@@ -186,7 +186,7 @@ void doublyList<T>::insert(T value, int position)
             pre = head;
 
             int i = 0;
-            while (cur != NULL && i != position)
+            while (cur != nullptr && i != position)
             {
                 pre = cur;
                 cur = cur->next;
@@ -206,20 +206,20 @@ void doublyList<T>::pushFront(T value)
 {
     node<T> *temp = new node<T>;
     temp->data = value;
-    temp->prev = NULL;
+    temp->prev = nullptr;
 
-    if (head == NULL)
+    if (head == nullptr)
     {
         head = temp;
         tail = temp;
-        temp->next = NULL;
+        temp->next = nullptr;
     }
     else
     {
         node<T> *cur = head;
         node<T> *pre = head;
 
-        while (cur != NULL)
+        while (cur != nullptr)
         {
             pre = cur;
             cur = cur->next;
@@ -236,7 +236,7 @@ void doublyList<T>::display()
 {
     node<T> *cur = head;
 
-    while (cur != NULL)
+    while (cur != nullptr)
     {
         std::cout << cur->data << std::endl;
         cur = cur->next;
@@ -249,18 +249,18 @@ void doublyList<T>::pushBack(T value)
     node<T> *temp = new node<T>;
     temp->data = value;
 
-    temp->next = NULL;
+    temp->next = nullptr;
 
-    if (head == NULL)
+    if (head == nullptr)
     {
-        temp->prev = NULL;
+        temp->prev = nullptr;
         head = temp;
     }
     else
     {
         node<T> *cur = head;
         node<T> *pre = head;
-        while (cur != NULL)
+        while (cur != nullptr)
         {
             pre = cur;
             cur = cur->next;
